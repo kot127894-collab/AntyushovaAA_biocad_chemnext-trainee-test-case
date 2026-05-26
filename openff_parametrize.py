@@ -5,25 +5,20 @@ from openff.toolkit.typing.engines.smirnoff import ForceField
 import parmed
 
 INPUT_SDF = "example.sdf"
-
 OUTPUT_DIR = Path("output")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 ff = ForceField("openff_unconstrained-2.1.0.offxml")
 
-
 def clean(name, i):
     if not name:
         return f"ligand_{i}"
     return "".join(c if c.isalnum() else "_" for c in name)
-
-
+    
 suppl = Chem.SDMolSupplier(INPUT_SDF, removeHs=False)
 
 for i, mol in enumerate(suppl):
-
     try:
-
         if mol is None:
             print(f"Skipping molecule {i}: RDKit failed")
             continue
@@ -79,7 +74,6 @@ for i, mol in enumerate(suppl):
         print(f"Saved: {name}")
 
     except Exception as e:
-
         print(f"ERROR for molecule {i}: {e}")
         continue
 
