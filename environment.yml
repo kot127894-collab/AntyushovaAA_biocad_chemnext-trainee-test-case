@@ -1,0 +1,12 @@
+name: openff
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - rdkit
+  - openmm
+  - parmed
+  - openff-toolkit
+  - openff-forcefields
