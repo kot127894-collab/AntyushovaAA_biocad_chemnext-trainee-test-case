@@ -54,10 +54,10 @@ python openff_parametrize.py
 
 ```text
 output/
- ├── CHEMBL45305/
-      ├── ligand.pdb
-      ├── conf.gro
-      └── topol.top
+  ── CHEMBL45305/
+       ── ligand.pdb
+       ── conf.gro
+       ── topol.top
 ```
 
 ## Особенности реализации
